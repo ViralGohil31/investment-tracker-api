@@ -6,8 +6,6 @@ import org.springframework.security.oauth2.core.DelegatingOAuth2TokenValidator;
 import org.springframework.security.oauth2.core.OAuth2TokenValidator;
 import org.springframework.security.oauth2.jwt.*;
 
-import java.util.List;
-
 @Configuration
 public class JwtDecoderConfig {
 
