@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: DDL/Create_User_Table.sql
+      relativeToChangelogFile: true
+  - include:
+      file: DDL/Create_Investments_Table.sql
+      relativeToChangelogFile: true
