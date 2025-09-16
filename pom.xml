@@ -8,7 +8,7 @@
 		<version>3.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.investment</groupId>
+	<groupId>com.investmentRequest</groupId>
 	<artifactId>Investment-tracker-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Investment-tracker-api</name>

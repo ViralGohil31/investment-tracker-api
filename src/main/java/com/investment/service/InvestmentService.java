@@ -1,12 +1,14 @@
 package com.investment.service;
 
-import com.investment.model.Investment;
+import com.investment.model.request.InvestmentRequest;
 import org.springframework.stereotype.Service;
+
+import java.util.UUID;
 
 @Service
 public class InvestmentService {
-    public Investment createInvestment(Investment investment) {
-        return investment;
+    public UUID createInvestment(InvestmentRequest investmentRequest) {
+        return null;
     }
 
 }
