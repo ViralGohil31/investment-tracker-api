@@ -35,7 +35,7 @@ public class InvestmentEntity {
     private String currency;
 
     @Column(nullable = false)
-    private String purchaseDate;
+    private LocalDateTime purchaseDate;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;

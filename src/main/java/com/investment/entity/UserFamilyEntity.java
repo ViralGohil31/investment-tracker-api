@@ -11,7 +11,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
-@Table(name = "families")
+@Table(name = "user_family")
 public class UserFamilyEntity {
     @Id
     @GeneratedValue
