@@ -1,7 +1,7 @@
 
 CREATE TABLE IF NOT EXISTS investments (
     id              UUID NOT NULL,
-    user_id         VARCHAR(50) NOT NULL,
+    user_id         UUID NOT NULL,
     name            VARCHAR(200) NOT NULL,
     type            VARCHAR(50),               -- Stock, Bond, MutualFund, etc.
     amount          DECIMAL(15,2),

@@ -17,9 +17,11 @@ public class UserFamilyEntity {
     @GeneratedValue
     private UUID userFamilyId;
 
-    @Column
-    private UUID userId;
-    
-    @Column
-    private UUID familyId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private UserEntity user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "family_id", nullable = false)
+    private FamilyEntity family;
 }
