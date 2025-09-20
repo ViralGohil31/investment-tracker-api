@@ -19,9 +19,6 @@ public class InvestmentEntity {
     @GeneratedValue
     private UUID id;
 
-    /*@Column(nullable = false)
-    private String userId;
-*/
     @Column(nullable = false)
     private String name;
 
