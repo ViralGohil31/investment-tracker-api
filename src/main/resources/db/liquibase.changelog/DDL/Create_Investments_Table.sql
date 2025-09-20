@@ -1,6 +1,5 @@
 
-DROP TABLE IF EXISTS investments CASCADE;
-CREATE TABLE investments (
+CREATE TABLE IF NOT EXISTS investments (
     id              UUID NOT NULL,
     user_id         VARCHAR(50) NOT NULL,
     name            VARCHAR(200) NOT NULL,
@@ -11,7 +10,7 @@ CREATE TABLE investments (
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at      TIMESTAMP,
 
-    CONSTRAINT pk_investments PRIMARY_KEY (id),
+    CONSTRAINT pk_investments PRIMARY KEY (id),
     CONSTRAINT fk_investment_user
       FOREIGN KEY (user_id) REFERENCES users(user_id)
       ON DELETE CASCADE

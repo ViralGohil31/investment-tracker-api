@@ -1,7 +1,6 @@
 package com.investment.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -16,14 +15,32 @@ import java.util.UUID;
 @Entity
 @Table(name = "investments")
 public class InvestmentEntity {
+    @Id
+    @GeneratedValue
     private UUID id;
+
+    @Column(nullable = false)
     private String userId;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String type;
+
+    @Column(nullable = false)
     private BigDecimal amount;
+
+    @Column(nullable = false)
     private String currency;
-    private String purchase_date;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
+
+    @Column(nullable = false)
+    private String purchaseDate;
+
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
+
+    @Column(nullable = false)
+    private LocalDateTime updatedAt;
 
 }

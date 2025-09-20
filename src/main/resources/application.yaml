@@ -8,5 +8,39 @@ spring:
           issuer-uri: "http://localhost:8080/realms/investment-app"
           jwk-set-uri: "http://localhost:8080/realms/investment-app/protocol/openid-connect/certs"
 
+  datasource:
+    url: jdbc:h2:mem:investmentsdb    # in-memory database
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+    jpa:
+      database-platform: org.hibernate.dialect.H2Dialect
+      hibernate:
+        ddl-auto: update
+    h2:
+      console:
+        enabled: true
+        path: /h2-console
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    open-in-view: false
+    generate-ddl: false
+    hibernate:
+      ddl-auto: update   # options: validate | update | create | create-drop
+    defer-datasource-initialization: false
+    show-sql: true       # print SQL in logs
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    enabled: true
+    change-log: classpath:db/liquibase.changelog/db.changelog-master.yaml
+    contexts: ${spring.profiles.active}
+
+
 server:
   port: 8081
