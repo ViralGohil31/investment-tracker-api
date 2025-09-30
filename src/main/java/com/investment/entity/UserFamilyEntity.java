@@ -5,17 +5,14 @@ import lombok.*;
 
 import java.util.UUID;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "user_family")
 public class UserFamilyEntity {
     @Id
     @GeneratedValue
-    private UUID userFamilyId;
+    private UUID id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)

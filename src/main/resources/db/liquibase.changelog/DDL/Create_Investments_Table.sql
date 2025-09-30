@@ -12,6 +12,6 @@ CREATE TABLE IF NOT EXISTS investments (
 
     CONSTRAINT pk_investments PRIMARY KEY (id),
     CONSTRAINT fk_investment_user
-      FOREIGN KEY (user_id) REFERENCES users(user_id)
+      FOREIGN KEY (user_id) REFERENCES users(id)
       ON DELETE CASCADE
 );

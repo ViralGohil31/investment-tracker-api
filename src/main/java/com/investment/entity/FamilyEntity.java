@@ -1,24 +1,22 @@
 package com.investment.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Builder;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "families")
 public class FamilyEntity {
 
     @Id
     @GeneratedValue
-    private UUID familyId;
+    private UUID id;
 
     @Column(nullable = false)
     private String familyName;
@@ -26,7 +24,7 @@ public class FamilyEntity {
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "family", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "family", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<UserFamilyEntity> users;
 
 }

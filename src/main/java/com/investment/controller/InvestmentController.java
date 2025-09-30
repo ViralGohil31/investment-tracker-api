@@ -32,6 +32,8 @@ public class InvestmentController {
         log.info(COMPLETED_REQUEST, requestId, "createInvestment");
         return new ResponseEntity<>(investmentId, HttpStatus.CREATED);
     }
+
+
     @GetMapping
     public ResponseEntity<List<InvestmentRequest>> getAllInvestments(
             @RequestParam(defaultValue = "0") int page,
