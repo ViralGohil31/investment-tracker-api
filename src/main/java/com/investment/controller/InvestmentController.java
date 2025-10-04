@@ -41,7 +41,7 @@ public class InvestmentController {
 
     @GetMapping
     public ResponseEntity<ApiResponse<List<InvestmentRequest>>> getAllInvestments(@RequestParam(defaultValue = "0") int page,
-                                                                     @RequestParam(defaultValue = "10") int size) {
+                                                                                  @RequestParam(defaultValue = "10") int size) {
         return null;
     }
 
