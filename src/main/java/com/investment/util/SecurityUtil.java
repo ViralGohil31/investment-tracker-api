@@ -12,7 +12,7 @@ public class SecurityUtil {
      * Extract userId (sub) from current authenticated JWT.
      * @return userId
      */
-    public static String getUserId() {
+    public static String getCurrentUserId() {
         var authentication = SecurityContextHolder.getContext().getAuthentication();
 
         if (authentication instanceof JwtAuthenticationToken jwtAuth) {
