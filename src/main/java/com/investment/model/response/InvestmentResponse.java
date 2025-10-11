@@ -1,12 +1,11 @@
-package com.investment.model.request;
+package com.investment.model.response;
 
 import lombok.Builder;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 @Builder
-public record InvestmentRequest(
+public record InvestmentResponse(
         String assetIdentificationNumber,
         String assetType,
         String name,

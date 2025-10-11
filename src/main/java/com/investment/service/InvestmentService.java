@@ -1,7 +1,9 @@
 package com.investment.service;
 
+import com.investment.entity.InvestmentEntity;
 import com.investment.entity.UserEntity;
 import com.investment.exception.UserNotFoundException;
+import com.investment.mapper.InvestmentMapper;
 import com.investment.model.request.InvestmentRequest;
 import com.investment.repository.InvestmentRepository;
 import com.investment.repository.UserRepository;
@@ -17,16 +19,18 @@ public class InvestmentService {
 
     private final InvestmentRepository investmentRepository;
     private final UserRepository userRepository;
+    private final InvestmentMapper investmentMapper;
 
     public UUID createInvestment(InvestmentRequest investmentRequest) {
-        String userId = SecurityUtil.getCurrentUserId();
+        UUID userId = SecurityUtil.getCurrentUserId();
 
-        UserEntity user = userRepository.findById(UUID.fromString(userId))
+        UserEntity user = userRepository.findById(userId)
                 .orElseThrow(() -> new UserNotFoundException("User not found"));
 
+        InvestmentEntity investmentEntity = investmentMapper.toEntity(investmentRequest, user);
 
-
-        return null;
+        investmentRepository.save(investmentEntity);
+        return UUID.randomUUID();
     }
 
 }

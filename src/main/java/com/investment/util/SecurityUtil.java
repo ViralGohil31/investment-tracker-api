@@ -5,6 +5,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 
+import java.util.UUID;
+
 @UtilityClass
 public class SecurityUtil {
 
@@ -12,7 +14,7 @@ public class SecurityUtil {
      * Extract userId (sub) from current authenticated JWT.
      * @return userId
      */
-    public static String getCurrentUserId() {
+    public static UUID getCurrentUserId() {
         var authentication = SecurityContextHolder.getContext().getAuthentication();
 
         if (authentication instanceof JwtAuthenticationToken jwtAuth) {

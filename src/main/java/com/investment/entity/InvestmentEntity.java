@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -29,7 +30,7 @@ public class InvestmentEntity {
     private String currency;
 
     @Column(nullable = false)
-    private LocalDateTime purchaseDate;
+    private LocalDate purchaseDate;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;

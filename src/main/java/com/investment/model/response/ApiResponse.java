@@ -22,9 +22,9 @@ public class ApiResponse<T> {
     @AllArgsConstructor
     @RequiredArgsConstructor
     public static class ApiError {
-        @NonNull private ErrorCode code;      // e.g., "VALIDATION_ERROR", "USER_NOT_FOUND"
-        @NonNull  private String message;   // e.g., "Investment amount must be greater than zero"
-        private String field;     // Optional (useful for validation errors)
+        @NonNull private ErrorCode code;
+        @NonNull  private String message;
+        private String field;
 
         public static ApiError of(ErrorCode code, String message) {
             return ApiError.builder()

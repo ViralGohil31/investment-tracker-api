@@ -2,6 +2,7 @@ package com.investment.controller;
 
 import com.investment.model.request.InvestmentRequest;
 import com.investment.model.response.ApiResponse;
+import com.investment.model.response.InvestmentResponse;
 import com.investment.service.InvestmentService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -32,16 +33,17 @@ public class InvestmentController {
         log.info(COMPLETED_REQUEST, requestId, "createInvestment");
 
         return ResponseEntity
-                .ok(ApiResponse.<UUID>builder()
+                .status(HttpStatus.CREATED)
+                .body(ApiResponse.<UUID> builder()
                         .timestamp(Instant.now())
-                        .status(HttpStatus.OK.value())
+                        .status(HttpStatus.CREATED.value())
                         .data(investmentId)
                         .build());
     }
 
     @GetMapping
-    public ResponseEntity<ApiResponse<List<InvestmentRequest>>> getAllInvestments(@RequestParam(defaultValue = "0") int page,
-                                                                                  @RequestParam(defaultValue = "10") int size) {
+    public ResponseEntity<ApiResponse<List<InvestmentResponse>>> getAllInvestments(@RequestParam(defaultValue = "0") int page,
+                                                                                   @RequestParam(defaultValue = "10") int size) {
         return null;
     }
 

@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS investments (
     type            VARCHAR(50),               -- Stock, Bond, MutualFund, etc.
     amount          DECIMAL(15,2),
     currency        VARCHAR(10),
-    purchase_date   TIMESTAMP,
+    purchase_date   DATE,
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at      TIMESTAMP,
 
